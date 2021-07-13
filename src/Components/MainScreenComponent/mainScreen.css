@@ -1,0 +1,184 @@
+.mainscreen{
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.folder_component{
+    display: flex;
+    flex-direction: column;
+    max-width: 69px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.file_display{
+    display: inline-block;
+}
+
+.file_title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.img_impose_txt{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.impose_txt{
+    position: absolute;
+    bottom: 8px;
+    right: 9px;
+    user-select: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+.modal-main {
+    position:fixed;
+    background: white;
+    width: 15%;
+    height: 30%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 10px;
+}
+  
+.display-block {
+    display: block;
+}
+  
+.display-none {
+    display: none;
+}
+
+.modal-close-btn{
+    float: right;
+    border-radius: 0px;
+    border: 0px;
+    background-color: transparent;
+    font-weight: 500;
+    color: grey;
+    font-size: 20px;
+}
+.modal-title{
+    font-size: 20px;
+}
+
+.toggle-btn-1 {
+    border-radius: 10px 0px 0px 10px;
+    border: 0;
+    width: 60px;
+    height: 33px;
+}
+
+.toggle-btn-2 {
+    border-radius: 0px 10px 10px 0px;
+    border: 0;
+    width: 60px;
+    height: 33px;
+}
+
+.active-btn-color {
+    background-color: rgb(17, 162, 230);
+    color: white;
+}
+
+.inactive-btn-color {
+    background-color:#e3e3e6;
+    color: black;
+}
+
+.modal-confirm-btn{
+    width: 150px;
+    border: 0;
+    border-radius: 10px;
+    height: 33px;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    border: 0;
+    text-align: left;
+    font-size: 15px;
+    background-color: white;
+}
+
+.dropdown-content button:hover {background-color: #f1f1f1}
+
+.breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.breadcrumb_path {
+    display: flex;
+    align-items: center;
+}
+
+.back_btn {
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px;
+}
+
+.non_active {
+    color: grey;
+    text-decoration: underline dotted;
+    text-underline-offset: 5px;
+}
+
+.active {
+    color: black;
+}
+
+.input_container { 
+    position:relative;
+    padding:0;
+    margin:0;
+}
+.input { 
+    height:30px;
+    margin:0;
+    padding-left:30px;
+    border-radius: 11px;
+    border-width: 1px;
+    border-color: grey;
+}
+.input_img {
+    position:absolute;
+    bottom:9px;
+    left:10px;
+    width:15px;
+    height:15px;
+}
