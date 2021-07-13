@@ -34,6 +34,7 @@ function MainScreen(){
     let sortByFunc = searchText ? sortByText : sortByParentID;
     const driveDataList = useSelector((state) => state.drive.value.filter(sortByFunc));
     const fullDriveDataList = useSelector((state) => state.drive.value);
+    console.log('fullDriveDataList',fullDriveDataList);
 
     function handleContextMenu(e,record){
         e.preventDefault();
@@ -75,7 +76,7 @@ function MainScreen(){
 
     function onCreate(fileName, fileType){
         let newRecord = {
-            id: new Date().valueOf(),
+            id: new Date().valueOf() * Math.random(),
             name: fileName,
             parentID: activeDirectory.id,
             type: fileType
@@ -85,12 +86,12 @@ function MainScreen(){
     }
 
     function addCopiedRecord(){
-        let newObj = {...copiedRecord,parentID:activeDirectory.id,id:new Date().valueOf()};
+        let newObj = {...copiedRecord,parentID:activeDirectory.id,id:new Date().valueOf() * Math.random()};
         dispatch(create(newObj));
         let childrenNode = fullDriveDataList.filter((record) => record.parentID === copiedRecord.id);
         childrenNode.forEach(
             record => {
-                let newChild = {...record,parentID:newObj.id,id:new Date().valueOf()};
+                let newChild = {...record,parentID:newObj.id,id:new Date().valueOf() * Math.random()};
                 dispatch(create(newChild))
                 recurciseCreateRecord(record.id,newChild.id);
             })
@@ -99,7 +100,7 @@ function MainScreen(){
     function recurciseCreateRecord(parentID, newParentID){
         let childrenNode = fullDriveDataList.filter((record) => record.parentID === parentID);
         childrenNode.forEach(record=>{
-            let newObj = {...record,parentID:newParentID,id:new Date().valueOf()}
+            let newObj = {...record,parentID:newParentID,id:new Date().valueOf() * Math.random()}
             dispatch(create(newObj));
             recurciseCreateRecord(record.id,newObj.id);
         });
